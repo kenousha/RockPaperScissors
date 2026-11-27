@@ -1,0 +1,6 @@
+FUNCTION getComputerChoice
+    create a variable for randomNumber
+    set randomNumber to a random integer from 0 to 2
+    IF randomNumber is 0, return "rock"
+    ELSE IF randomNumber is 1, return "paper"
+    ELSE return "Scissors"
