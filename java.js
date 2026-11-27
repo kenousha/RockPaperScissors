@@ -14,7 +14,8 @@ function getComputerChoice(){
 function getHumanChoice(){
     return prompt("Rock, paper or scissors?")
 }
-
+let humanScore = 0
+let computerScore = 0
 // return a result based on the humanChoice and computerChoice
 function playRound(humanChoice, computerChoice){
     // makes the user choice case insensitive
@@ -43,8 +44,14 @@ playRound(humanSelection, computerSelection);
 
 const result = playRound(humanSelection, computerSelection);
 
-const humanScore = 0
-const computerScore = 0
 
 
-console.log(result + "!")
+function updateScore(){
+    if (result == "winner"){
+        return humanScore = ++humanScore;
+    }
+    else if (result == "loser"){
+        return computerScore = ++computerScore;
+    }else{return}
+}
+console.log(updateScore())
