@@ -19,30 +19,21 @@ function getHumanChoice(){
 function playRound(humanChoice, computerChoice){
     // makes the user choice case insensitive
     humanChoice.toLowerCase()
+    
     if(humanChoice === "rock"){
         computerChoice === "scissors" ? "winner" :
         computerChoice === "paper" ? "loser" :
         "draw";
     }
     if(humanChoice === "paper"){
-        if(computerChoice === "rock"){
-            return "winner";
-        }
-        else if (computerChoice === "paper"){
-            return "draw";
-        } else {
-            return "loser";
-        }
+        computerChoice === "rock" ? "winner" :
+        computerChoice === "scissors" ? "loser" :
+        "draw";
     }
     if(humanChoice === "scissors"){
-        if(computerChoice === "paper"){
-            return "winner";
-        }
-        else if (computerChoice === "scissors"){
-            return "draw";
-        } else {
-            return "loser";
-        }
+        computerChoice === "paper" ? "winner" :
+        computerChoice === "rock" ? "loser" :
+        "draw";
     }
 }
 const humanSelection = getHumanChoice();
