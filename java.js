@@ -14,44 +14,57 @@ function getComputerChoice(){
 function getHumanChoice(){
     return prompt("Rock, paper or scissors?")
 }
-let humanScore = 0
-let computerScore = 0
+
 // return a result based on the humanChoice and computerChoice
-function playRound(humanChoice, computerChoice){
-    // makes the user choice case insensitive
-    humanChoice.toLowerCase()
+function playGame(){
+    let humanScore = 0
+    let computerScore = 0
+
+    function playRound(humanChoice, computerChoice){
+        
+        humanChoice = humanChoice.toLowerCase()
+            
+        if(humanChoice === "rock"){
+            return  computerChoice === "scissors" ? "winner" :
+                    computerChoice === "paper" ? "loser" :
+                    "draw";
+        }
+
+        if(humanChoice === "paper"){
+            return  computerChoice === "rock" ? "winner" :
+                    computerChoice === "scissors" ? "loser" :
+                    "draw";
+        }
+
+        if(humanChoice === "scissors"){
+            return  computerChoice === "paper" ? "winner" :
+                    computerChoice === "rock" ? "loser" :
+                    "draw";
+        }
+    }
+
+    function playOneRound(){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        const result = playRound(humanSelection, computerSelection);
+        
+        if (result == "winner"){
+            ++humanScore;
+            }
+        else if (result == "loser"){
+            ++computerScore;
+        }
+        console.log(`You: ${humanSelection}, Computer: ${computerSelection}. Score ${humanScore}-${computerScore}`);
+    }
     
-    if(humanChoice === "rock"){
-        return computerChoice === "scissors" ? "winner" :
-        computerChoice === "paper" ? "loser" :
-        "draw";
-    }
-    if(humanChoice === "paper"){
-        return computerChoice === "rock" ? "winner" :
-        computerChoice === "scissors" ? "loser" :
-        "draw";
-    }
-    if(humanChoice === "scissors"){
-        return computerChoice === "paper" ? "winner" :
-        computerChoice === "rock" ? "loser" :
-        "draw";
-    }
+    playOneRound();
+    playOneRound();
+    playOneRound();
+    playOneRound();
+    playOneRound();
+    
+    console.log(`Final score: You ${humanScore} - Computer ${computerScore}`);
+    
 }
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection);
-
-const result = playRound(humanSelection, computerSelection);
-
-
-
-function updateScore(){
-    if (result == "winner"){
-        return humanScore = ++humanScore;
-    }
-    else if (result == "loser"){
-        return computerScore = ++computerScore;
-    }else{return}
-}
-console.log(updateScore())
+playGame();
