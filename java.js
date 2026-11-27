@@ -9,23 +9,20 @@ function getComputerChoice(){
         return "paper";
     } else {return "scissors";}
 }
-
+// ask the user for their choice
+// assign the user's choice to the function
 function getHumanChoice(){
     return prompt("Rock, paper or scissors?")
 }
 
-
+// return a result based on the humanChoice and computerChoice
 function playRound(humanChoice, computerChoice){
+    // makes the user choice case insensitive
     humanChoice.toLowerCase()
     if(humanChoice === "rock"){
-        if(computerChoice === "scissors"){
-            return "winner";
-        }
-        else if (computerChoice === "rock"){
-            return "draw";
-        } else {
-            return "loser";
-        }
+        computerChoice === "scissors" ? "winner" :
+        computerChoice === "paper" ? "loser" :
+        "draw";
     }
     if(humanChoice === "paper"){
         if(computerChoice === "rock"){
