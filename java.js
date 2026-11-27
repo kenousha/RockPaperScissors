@@ -21,17 +21,17 @@ function playRound(humanChoice, computerChoice){
     humanChoice.toLowerCase()
     
     if(humanChoice === "rock"){
-        computerChoice === "scissors" ? "winner" :
+        return computerChoice === "scissors" ? "winner" :
         computerChoice === "paper" ? "loser" :
         "draw";
     }
     if(humanChoice === "paper"){
-        computerChoice === "rock" ? "winner" :
+        return computerChoice === "rock" ? "winner" :
         computerChoice === "scissors" ? "loser" :
         "draw";
     }
     if(humanChoice === "scissors"){
-        computerChoice === "paper" ? "winner" :
+        return computerChoice === "paper" ? "winner" :
         computerChoice === "rock" ? "loser" :
         "draw";
     }
