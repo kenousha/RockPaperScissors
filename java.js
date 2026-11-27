@@ -41,4 +41,10 @@ const computerSelection = getComputerChoice();
 
 playRound(humanSelection, computerSelection);
 
-console.log(playRound(humanSelection, computerSelection))
+const result = playRound(humanSelection, computerSelection);
+
+const humanScore = 0
+const computerScore = 0
+
+
+console.log(result + "!")
