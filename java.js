@@ -14,4 +14,43 @@ function getHumanChoice(){
     return prompt("Rock, paper or scissors?")
 }
 
-console.log(getHumanChoice())
+
+function playRound(humanChoice, computerChoice){
+    humanChoice.toLowerCase()
+    if(humanChoice === "rock"){
+        if(computerChoice === "scissors"){
+            return "winner";
+        }
+        else if (computerChoice === "rock"){
+            return "draw";
+        } else {
+            return "loser";
+        }
+    }
+    if(humanChoice === "paper"){
+        if(computerChoice === "rock"){
+            return "winner";
+        }
+        else if (computerChoice === "paper"){
+            return "draw";
+        } else {
+            return "loser";
+        }
+    }
+    if(humanChoice === "scissors"){
+        if(computerChoice === "paper"){
+            return "winner";
+        }
+        else if (computerChoice === "scissors"){
+            return "draw";
+        } else {
+            return "loser";
+        }
+    }
+}
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
+console.log(playRound(humanSelection, computerSelection))
