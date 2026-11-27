@@ -7,3 +7,39 @@ FUNCTION getComputerChoice
 
 FUNCTION getHumanChoice
     GET the user input for their choice of either rock, paper or scissors.
+
+Create a variable for humanScore and set it to 0
+Create a variable for computerScore and set it to 0
+
+
+FUNCTION playGame
+    FUNCTION playRound
+        SET the parameters to humanChoice and computerChoice
+        SET the humanChoice to lowercase
+        IF humanChoice is rock
+            IF computerChoice is scissors, return "winner"
+            ELSE IF computerChoice is rock, return "draw"
+            ELSE return "loser"
+        IF humanChoice is paper
+            IF computerChoice is rock, return "winner"
+            ELSE IF computerChoice is paper, return "draw"
+            ELSE return "loser"
+        IF humanChoice is scissors
+            IF computerChoice is paper, return "winner"
+            ELSE IF computerChoice is scissors, return "draw"
+            ELSE return "loser"
+    
+    
+    SET humanSelection to getHumanChoice
+    SET computerSelection to getComputerChoice
+
+    Create a variable for result, and set it to the return value of playRound
+
+    FUNCTION updateScore
+        IF result is "winner"
+            INCREMENT humanScore by 1
+        ELSE IF result is "loser"
+            INCREMENT computerScore by 1
+        ELSE
+            do nothing
+    REPEAT 5 times
